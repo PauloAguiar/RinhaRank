@@ -1,0 +1,14 @@
+RequestTimes
+| where Folder != "Folder"
+| where Type != "validações"
+| summarize
+    SuccessCount = countif(Result == "OK"),
+    ErrorCount = countif(Result != "OK"),
+    AvgTotal = round(avg(ElapsedTime),6),
+    AvgCredito = round(avgif(ElapsedTime, Type == "créditos"), 6),
+    AvgDebito = round(avgif(ElapsedTime, Type == "débitos"), 6),
+    AvgExtrato = round(avgif(ElapsedTime, Type == "extratos"), 6) by Folder
+| order by SuccessCount desc, AvgTotal asc
+| extend Rank = row_number()
+| extend Link = strcat("https://github.com/zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/", Folder)
+| project Rank, AvgTotal, Folder, AvgCredito, AvgDebito, AvgExtrato, SuccessCount, ErrorCount, Link
