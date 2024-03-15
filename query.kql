@@ -48,4 +48,4 @@ RequestTimes
 | extend Rank = row_number()
 | extend Link = strcat("https://github.com/zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/", Folder)
 | join kind=leftouter (Tags) on Folder
-| project Rank, Folder, LoadBalancer, Language, Framework, Database, SuccessCount, ErrorCount, Link
+| project Rank, AvgTotal, Folder, AvgCredito, AvgDebito, AvgExtrato, LoadBalancer, Language, Framework, Database, SuccessCount, ErrorCount, Link
