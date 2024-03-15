@@ -2,7 +2,7 @@
 
 Metodologia
 
-O script [Program.cs](Program.cs) foi utilizado para extrair todos os elapsed times de requests do arquivo Simulation.log, resultando em um arquivo por submissao como abaixo:
+O script [Program.cs](LogParser/Program.cs) foi utilizado para extrair todos os elapsed times de requests do arquivo Simulation.log, resultando em um arquivo por submissao como abaixo:
 ```
 Folder,Type,StartTime,EndTime,ElapsedTime,Result
 "phaguiar-net","validações","1710105131480","1710105131517","37","OK"
@@ -12,6 +12,7 @@ Folder,Type,StartTime,EndTime,ElapsedTime,Result
 "phaguiar-net","validações","1710105131479","1710105131508","29","OK"
 ```
 
+O ChatGPT foi utilizado para gerar tags baseadas nas README de cada repositorio.
 Esses arquivos foram ingeridos em no Azure Data Explorer e ordernados atraves da query nesse arquivo: [Query](query.kql)
 
 Os resultado final da query pode ser visto aqui:
