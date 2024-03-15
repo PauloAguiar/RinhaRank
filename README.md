@@ -14,9 +14,15 @@ Folder,Type,StartTime,EndTime,ElapsedTime,Result
 
 Esses arquivos foram ingeridos em no Azure Data Explorer e ordernados atraves da query nesse arquivo: [Query](query.kql)
 
-O resultado final da query pode ser visto aqui: [Resultado](result.csv)
+Os resultado final da query pode ser visto aqui:
 
-TOP 20
+[Resultado - Sem Validações](result-sem-validacoes.csv)
+
+[Resultado - Somente Validações](result-so-validacoes.csv)
+
+[Resultado - Tudo](result-total.csv)
+
+TOP 20 (Sem Validações)
 | Rank | AvgTotal | Folder                                       | AvgCredito | AvgDebito | AvgExtrato | SuccessCount | ErrorCount |
 |------|----------|----------------------------------------------|------------|-----------|------------|--------------|------------|
 | 1    | 0.222206 | [asfernandes-cpp-haproxy-mongoose-lmdb](https://github.com/zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/asfernandes-cpp-haproxy-mongoose-lmdb)       | 0.252971   | 0.201563  | 0.333871   | 61380        | 0          |
